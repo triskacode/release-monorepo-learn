@@ -1,0 +1,57 @@
+{
+  "name": "release-monorepo-learn",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.12.0",
+  "description": "This repo is my learning case study on how to release a package in a monorepo.",
+  "author": "Triska Mahfud K (https://github.com/triskacode)",
+  "license": "UNLICENSED",
+  "funding": "https://github.com/sponsors/triskacode",
+  "homepage": "https://github.com/triskacode/release-monorepo-learn#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triskacode/release-monorepo-learn.git"
+  },
+  "bugs": "https://github.com/triskacode/release-monorepo-learn/issues",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "prepublishOnly": "pnpm build",
+    "release": "bumpp && pnpm publish",
+    "lint:all:eslint": "pnpm lint:eslint .",
+    "lint:all:prettier": "pnpm lint:prettier \"{src,test}/**/*.{js,json,ts}\"",
+    "lint:eslint": "eslint --fix",
+    "lint:prettier": "prettier --write --log-level warn",
+    "test": "vitest run",
+    "test:types": "tsc --noEmit",
+    "prepare": "simple-git-hooks"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.3.2",
+    "@types/node": "^22.5.4",
+    "bumpp": "^9.5.2",
+    "eslint": "^9.9.1",
+    "lint-staged": "^15.2.10",
+    "prettier": "3.3.3",
+    "simple-git-hooks": "^2.11.1",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}

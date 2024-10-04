@@ -1,5 +1,5 @@
 {
-  "name": "release-monorepo-learn",
+  "name": "@triskacode/release-monorepo-learn",
   "type": "module",
   "version": "0.0.1-beta.1",
   "packageManager": "pnpm@9.12.0",

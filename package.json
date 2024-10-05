@@ -29,19 +29,20 @@
   "scripts": {
     "build": "tsup-node",
     "prepublishOnly": "pnpm build",
-    "release": "bumpp && pnpm publish --access public",
     "lint:all:eslint": "pnpm lint:eslint .",
     "lint:all:prettier": "pnpm lint:prettier \"{src,test}/**/*.{js,json,ts}\"",
     "lint:eslint": "eslint --fix",
     "lint:prettier": "prettier --write --log-level warn",
     "test": "vitest run",
     "test:types": "tsc --noEmit",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "ci:version": "changeset version",
+    "ci:publish": "pnpm publish -r"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.3.2",
+    "@changesets/cli": "^2.27.9",
     "@types/node": "^22.5.4",
-    "bumpp": "^9.5.2",
     "eslint": "^9.9.1",
     "lint-staged": "^15.2.10",
     "prettier": "3.3.3",

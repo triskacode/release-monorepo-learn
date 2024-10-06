@@ -1,4 +1,6 @@
-name: Release
+# this workflow is triggered on a tag push by bumpp library
+# since we change bumpp with changeset, this workflow will temporarily disabled
+name: Release with Bumpp
 
 permissions:
   contents: write
@@ -27,18 +29,15 @@ jobs:
           node-version: lts/*
           registry-url: https://registry.npmjs.org
 
-      - name: Setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Create and publish versions
-        uses: changesets/action@v1
-        with:
-          version: pnpm ci:version
-          commit: 'chore: update versions'
-          title: 'chore: update versions'
-          publish: pnpm ci:publish
+      - name: Generate changelog
+        run: pnpm dlx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # # Uncomment the following lines to publish to npm on CI
+      #
+      # - run: pnpm install --frozen-lockfile
+      # - run: pnpm publish -r --access public
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      #     NPM_CONFIG_PROVENANCE: true

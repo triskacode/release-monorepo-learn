@@ -37,7 +37,7 @@
     "test:types": "tsc --noEmit",
     "prepare": "simple-git-hooks",
     "ci:version": "changeset version",
-    "ci:publish": "pnpm publish -r"
+    "ci:publish": "pnpm publish -r --access public && changeset tag"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.3.2",

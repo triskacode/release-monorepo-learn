@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout

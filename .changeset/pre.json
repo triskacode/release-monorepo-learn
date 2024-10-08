@@ -4,5 +4,5 @@
   "initialVersions": {
     "@triskacode/release-monorepo-learn": "0.0.1-beta.2"
   },
-  "changesets": []
+  "changesets": ["honest-bulldogs-visit"]
 }

@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@triskacode/release-monorepo-learn": "0.0.1-beta.2"
+  },
+  "changesets": []
+}

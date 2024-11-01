@@ -1,5 +1,11 @@
 # @triskacode/release-monorepo-learn
 
+## 0.1.0-beta.6
+
+### Minor Changes
+
+- 3db4afa: update ci
+
 ## 0.1.0-beta.5
 
 ### Minor Changes

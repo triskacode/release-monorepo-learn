@@ -33,16 +33,6 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: pnpm
 
-      - name: Add npm token
-        run: |
-          if [ -f .npmrc ]; then
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          else
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-          fi
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Install dependencies
         run: pnpm install
 

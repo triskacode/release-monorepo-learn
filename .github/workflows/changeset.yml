@@ -34,12 +34,20 @@ jobs:
           cache: pnpm
 
       - name: Add npm token
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+        run: |
+          if [ -f .npmrc ]; then
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          else
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+          fi
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
+
+      - name: List config
+        run: npm config ls -l
 
       - name: Create Release Pull Request
         uses: changesets/action@v1

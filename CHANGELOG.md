@@ -1,5 +1,11 @@
 # @triskacode/release-monorepo-learn
 
+## 0.1.0-beta.5
+
+### Minor Changes
+
+- 6ccf160: Show npm config to log
+
 ## 0.1.0-beta.4
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @triskacode/release-monorepo-learn
 
+## 1.0.0
+
+### Major Changes
+
+- e83641b: first release
+
+### Minor Changes
+
+- 8e224a7: Update hello function
+- 7a96535: Coba
+- ed175b0: Try bumpp version beta
+- 6ccf160: Show npm config to log
+- 3db4afa: update ci
+
 ## 0.1.0-beta.7
 
 ### Minor Changes

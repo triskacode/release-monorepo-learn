@@ -1,0 +1,33 @@
+{
+  "name": "@triskacode/hello-world",
+  "version": "0.0.1",
+  "description": "A simple hello world package built with typescript",
+  "author": "Triska Mahfud K (https://github.com/triskacode)",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/triskacode/release-monorepo-learn#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triskacode/release-monorepo-learn.git",
+    "directory": "packages/hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/triskacode/release-monorepo-learn/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "test": "vitest run",
+    "test:types": "tsc --noEmit"
+  }
+}

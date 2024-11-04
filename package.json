@@ -27,14 +27,16 @@
     "dist/"
   ],
   "scripts": {
-    "build": "tsup-node",
+    "build": "pnpm run --filter=!./playground/* build && pnpm build:root",
+    "build:root": "tsup-node",
     "prepublishOnly": "pnpm build",
     "lint:all:eslint": "pnpm lint:eslint .",
     "lint:all:prettier": "pnpm lint:prettier \"{src,test}/**/*.{js,json,ts}\"",
     "lint:eslint": "eslint --fix",
     "lint:prettier": "prettier --write --log-level warn",
     "test": "vitest run",
-    "test:types": "tsc --noEmit",
+    "test:types": "pnpm run --filter=!./playground/* test:types && pnpm test:types:root",
+    "test:types:root": "tsc --noEmit",
     "prepare": "simple-git-hooks",
     "ci:version": "changeset version",
     "ci:publish": "pnpm publish -r --access public --no-git-checks && changeset tag"

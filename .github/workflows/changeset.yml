@@ -36,9 +36,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      # TODO: remove this step when we finish developing the changeset action
       - name: List config
         run: npm config ls -l
 
+      # TODO: remove this step when we finish developing the changeset action
       - name: List config
         run: npm whoami
         env:

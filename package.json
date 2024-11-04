@@ -1,7 +1,7 @@
 {
   "name": "@triskacode/release-monorepo-learn",
   "type": "module",
-  "version": "0.1.0-beta.6",
+  "version": "0.1.0-beta.7",
   "packageManager": "pnpm@9.12.0",
   "description": "This repo is my learning case study on how to release a package in a monorepo.",
   "author": "Triska Mahfud K (https://github.com/triskacode)",

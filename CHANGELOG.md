@@ -1,5 +1,11 @@
 # @triskacode/release-monorepo-learn
 
+## 0.1.0-beta.7
+
+### Minor Changes
+
+- 8e224a7: Update hello function
+
 ## 0.1.0-beta.6
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@triskacode/hello-world",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple hello world package built with typescript",
   "author": "Triska Mahfud K (https://github.com/triskacode)",
   "license": "UNLICENSED",
